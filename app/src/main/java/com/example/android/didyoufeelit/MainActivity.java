@@ -36,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Create an {@link AsyncTask} to perform the HTTP request to the given URL
+        // on a background thread. When the result is received on the main UI thread,
+        // then update the UI.
         EarthquakeAsyncTask task = new EarthquakeAsyncTask();
         task.execute(USGS_REQUEST_URL);
     }
